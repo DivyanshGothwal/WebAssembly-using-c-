@@ -4,7 +4,7 @@ const size = config.size;
 const source = config.source;
 const graph=[];
 const vertex=[];
-console.time('startjs');
+console.time('JSTime');
 for(let i=0;i<size;i++){
     for(let j=0;j<size;j++){
       if(j===i){
@@ -53,5 +53,5 @@ function TspForJS(s,size){
     });
     return minWeigth;
 }
-console.log(TspForJS(source,size));
-console.timeEnd('startjs');
+console.log("JavaScript Output : "+TspForJS(source,size));
+console.timeEnd('JSTime');

@@ -1,0 +1,21 @@
+{
+  "name": "webassemblystarter",
+  "version": "1.0.0",
+  "description": "Performance comparision of WebAssembly and JavaScript",
+  "main": "TSPInPlainJS.js",
+  "scripts": {
+    "start": "node TSPUsingWebAssembly.js && node TSPInPlainJS.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DivyanshGothwal/WebAssembly-using-c-.git"
+  },
+  "author": "Divyansh Gothwal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DivyanshGothwal/WebAssembly-using-c-/issues"
+  },
+  "homepage": "https://github.com/DivyanshGothwal/WebAssembly-using-c-#readme",
+  "dependencies": {}
+}

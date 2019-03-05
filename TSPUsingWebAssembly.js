@@ -3,7 +3,7 @@ const config = require('./config').config;
 const size = config.size;
 const source = config.source;
 
-console.time('start');
+console.time('WebAssemblyTime');
 const buf = fs.readFileSync('./wasm/program.wasm');
 const env = {
   consoleLog: function consoleLog (value) {
@@ -15,7 +15,7 @@ WebAssembly.instantiate(wasmModule, {
   env:env
 }).then(result => {
   callTsp(result);
-  console.timeEnd('start');
+  console.timeEnd('WebAssemblyTime');
 }).catch(e => {
       console.log(e);
 });
@@ -37,6 +37,6 @@ function callTsp(result){
   for(let i=0;i<size*size;i++){
     graph[i]=i;
   }
-  console.log(result.exports.TSP(source,size,size));
+  console.log("WebAssembly Output : "+result.exports.TSP(source,size,size));
 }
     
