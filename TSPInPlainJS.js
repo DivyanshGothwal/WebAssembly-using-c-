@@ -5,9 +5,16 @@ const source = config.source;
 const graph=[];
 const vertex=[];
 console.time('startjs');
-for(let i=0;i<size*size;i++){
-    graph[i]=i;
-}
+for(let i=0;i<size;i++){
+    for(let j=0;j<size;j++){
+      if(j===i){
+        graph[(i*size)+j]=0;
+      }
+      else{
+        graph[(i*size)+j]=(i*size)+j;
+      }
+    }
+  }
 for(let i=0,j=0;i<size;i++){
     if(i!=source){
       vertex[j]=i;

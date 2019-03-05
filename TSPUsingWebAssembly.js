@@ -1,4 +1,3 @@
-
 const fs = require('fs');
 const config = require('./config').config;
 const size = config.size;
@@ -7,8 +6,9 @@ const source = config.source;
 console.time('start');
 const buf = fs.readFileSync('./wasm/program.wasm');
 const env = {
-    memcpy: function memcpy () {
-      }
+  consoleLog: function consoleLog (value) {
+    //console.log(value);
+  }
 }
 var wasmModule = new WebAssembly.Module(buf);
 WebAssembly.instantiate(wasmModule, {
@@ -22,7 +22,7 @@ WebAssembly.instantiate(wasmModule, {
 
 function callTsp(result){
   let graphOffset = result.exports.getOffsetGraph();
-  let vertexOffset = result.exports.getOffsetVertex();
+  let vertexOffset = result.exports.getOffsetvertex();
 
   let vertex = new Int32Array(result.exports.memory.buffer, vertexOffset, size-1);
   let graph = new Uint32Array(result.exports.memory.buffer, graphOffset, size*size);
