@@ -25,7 +25,7 @@ function callTsp(result){
   let vertexOffset = result.exports.getOffsetvertex();
 
   let vertex = new Int32Array(result.exports.memory.buffer, vertexOffset, size-1);
-  let graph = new Uint32Array(result.exports.memory.buffer, graphOffset, size*size);
+  let graph = new Int32Array(result.exports.memory.buffer, graphOffset, size*size);
   
   let j=0;
   for(let i=0;i<size;i++){
