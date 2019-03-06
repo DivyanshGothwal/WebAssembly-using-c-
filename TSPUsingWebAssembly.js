@@ -34,8 +34,15 @@ function callTsp(result){
       j++;
     }
   }
-  for(let i=0;i<size*size;i++){
-    graph[i]=i;
+  for(let i=0;i<size;i++){
+    for(let j=0;j<size;j++){
+      if(j===i){
+        graph[(i*size)+j]=0;
+      }
+      else{
+        graph[(i*size)+j]=(i*size)+j;
+      }
+    }
   }
   console.log("WebAssembly Output : "+result.exports.TSP(source,size,size));
 }
